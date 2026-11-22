@@ -1,6 +1,6 @@
 sensor:
 
-  # Header Outdoor Temperate
+  # Header Office Temperate
   - platform: homeassistant
     entity_id: sensor.office_4_awtrix_led_matrix_temperature
     id: office_temperature
@@ -20,7 +20,689 @@ sensor:
           text:
             format: "%d° / %d°"
             args: [ '(int)round(x)', '(int)round(id(office_temperature).state)' ]
-
+  
+  # Claude generated sensors from my own homeassistant instance
+  
+text_sensor:
+  - platform: homeassistant
+    id: ts_sensor_persons
+    entity_id: sensor.persons
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_persons
+            text: !lambda 'return std::string("Persons home: ") + x;'
+ 
+  - platform: homeassistant
+    id: ts_person_simon
+    entity_id: person.simon
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_simon
+            text: !lambda 'return std::string("Simon: ") + x;'
+ 
+  - platform: homeassistant
+    id: ts_weather_home
+    entity_id: weather.home
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_weather_state
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_1
+    entity_id: sensor.ics_1
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics1
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_4
+    entity_id: sensor.ics_4
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics4
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_2
+    entity_id: sensor.ics_2
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics2
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrraintext
+    entity_id: sensor.rrraintext
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain_text
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin30min
+    entity_id: sensor.rrrainin30min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain30
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin60min
+    entity_id: sensor.rrrainin60min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain60
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin120min
+    entity_id: sensor.rrrainin120min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain120
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_kitchen_move_l_2_title
+    entity_id: media_player.kitchen_move_l_2
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_kitchen_move_l_2_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_kitchen_move_l_2_state
+    entity_id: media_player.kitchen_move_l_2
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_kitchen_move_l_2_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_bedroom_l_title
+    entity_id: media_player.bedroom_l
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_bedroom_l_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_bedroom_l_state
+    entity_id: media_player.bedroom_l
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_bedroom_l_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_office_title
+    entity_id: media_player.office
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_office_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_office_state
+    entity_id: media_player.office
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_office_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_the_orphan_title
+    entity_id: media_player.the_orphan
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_the_orphan_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_the_orphan_state
+    entity_id: media_player.the_orphan
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_the_orphan_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_tv_room_title
+    entity_id: media_player.tv_room
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_tv_room_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_tv_room_state
+    entity_id: media_player.tv_room
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_tv_room_state
+            text: !lambda 'return x;'
+ 
+sensor:
+  - platform: homeassistant
+    id: sn_weather_temp
+    entity_id: weather.home
+    attribute: temperature
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_weather_temp
+            text: !lambda 'char b[16]; snprintf(b, sizeof(b), "%.1f C", x); return std::string(b);'
+ 
+  - platform: homeassistant
+    id: sn_illuminance
+    entity_id: sensor.illuminance_home
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_illum
+            text: !lambda 'char b[24]; snprintf(b, sizeof(b), "Illuminance: %.0f lx", x); return std::string(b);'
+ 
+  - platform: homeassistant
+    id: sn_light_wled_gledoptolwed32_bri
+    entity_id: light.wled_gledoptolwed32
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_wled_gledoptolwed32
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_wled_5_tvroom_balken_bri
+    entity_id: light.wled_5_tvroom_balken
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_wled_5_tvroom_balken
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_wled_5_bedroom_balken_bri
+    entity_id: light.wled_5_bedroom_balken
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_wled_5_bedroom_balken
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_kitchen_wled_led_strip_kitchen_floor_bri
+    entity_id: light.kitchen_wled_led_strip_kitchen_floor
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_kitchen_wled_led_strip_kitchen_floor
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_wled_cod_m_strip_bri
+    entity_id: light.wled_cod_m_strip
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_wled_cod_m_strip
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_hue_ambiance_candle_2_bri
+    entity_id: light.hue_ambiance_candle_2
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_hue_ambiance_candle_2
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_hue_ambiance_candle_1_bri
+    entity_id: light.hue_ambiance_candle_1
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_hue_ambiance_candle_1
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_kitchen_hue_filament_bulb_bri
+    entity_id: light.kitchen_hue_filament_bulb
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_kitchen_hue_filament_bulb
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_hue_iris_tv_left_bri
+    entity_id: light.hue_iris_tv_left
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_hue_iris_tv_left
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_hue_iris_tv_right_bri
+    entity_id: light.hue_iris_tv_right
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_hue_iris_tv_right
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_nanoleaf_shapes_bedroom_bri
+    entity_id: light.nanoleaf_shapes_bedroom
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_nanoleaf_shapes_bedroom
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_living_room_shapes_spare_bri
+    entity_id: light.living_room_shapes_spare
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_living_room_shapes_spare
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_neon_floor_lamp_bri
+    entity_id: light.neon_floor_lamp
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_neon_floor_lamp
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_stairs_nanoleaf_multicolor_floor_lamp_aufgang_2_bri
+    entity_id: light.stairs_nanoleaf_multicolor_floor_lamp_aufgang_2
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_stairs_nanoleaf_multicolor_floor_lamp_aufgang_2
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_light_bedroom_nanoleaf_multicolor_floor_lamp_bedroom_bri
+    entity_id: light.bedroom_nanoleaf_multicolor_floor_lamp_bedroom
+    attribute: brightness
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_light_bedroom_nanoleaf_multicolor_floor_lamp_bedroom
+            value: !lambda 'return isnan(x) ? 0 : x;'
+ 
+  - platform: homeassistant
+    id: sn_media_player_kitchen_move_l_2_vol
+    entity_id: media_player.kitchen_move_l_2
+    attribute: volume_level
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_media_player_kitchen_move_l_2_vol
+            value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+  - platform: homeassistant
+    id: sn_media_player_bedroom_l_vol
+    entity_id: media_player.bedroom_l
+    attribute: volume_level
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_media_player_bedroom_l_vol
+            value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+  - platform: homeassistant
+    id: sn_media_player_office_vol
+    entity_id: media_player.office
+    attribute: volume_level
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_media_player_office_vol
+            value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+  - platform: homeassistant
+    id: sn_media_player_the_orphan_vol
+    entity_id: media_player.the_orphan
+    attribute: volume_level
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_media_player_the_orphan_vol
+            value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+  - platform: homeassistant
+    id: sn_media_player_tv_room_vol
+    entity_id: media_player.tv_room
+    attribute: volume_level
+    internal: true
+    on_value:
+      then:
+        - lvgl.slider.update:
+            id: sl_media_player_tv_room_vol
+            value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+binary_sensor:
+  - platform: homeassistant
+    id: bs_presence
+    entity_id: binary_sensor.presence_detector_zg205z
+    internal: true
+    on_state:
+      then:
+        - lvgl.label.update:
+            id: lbl_presence
+            text: !lambda 'return x ? "Presence: yes" : "Presence: no";'
+ 
+  - platform: homeassistant
+    id: bs_motion_tv
+    entity_id: binary_sensor.tapocamstairs5_somecamtvroom_cell_motion_detection
+    internal: true
+    on_state:
+      then:
+        - lvgl.label.update:
+            id: lbl_motion
+            text: !lambda 'return x ? "TV room motion: yes" : "TV room motion: no";'
+ 
+  - platform: homeassistant
+    id: bs_light_wled_gledoptolwed32
+    entity_id: light.wled_gledoptolwed32
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_wled_gledoptolwed32
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_wled_5_tvroom_balken
+    entity_id: light.wled_5_tvroom_balken
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_wled_5_tvroom_balken
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_wled_5_bedroom_balken
+    entity_id: light.wled_5_bedroom_balken
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_wled_5_bedroom_balken
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_kitchen_wled_led_strip_kitchen_floor
+    entity_id: light.kitchen_wled_led_strip_kitchen_floor
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_kitchen_wled_led_strip_kitchen_floor
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_wled_cod_m_strip
+    entity_id: light.wled_cod_m_strip
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_wled_cod_m_strip
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_hue_ambiance_candle_2
+    entity_id: light.hue_ambiance_candle_2
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_hue_ambiance_candle_2
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_hue_ambiance_candle_1
+    entity_id: light.hue_ambiance_candle_1
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_hue_ambiance_candle_1
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_kitchen_hue_filament_bulb
+    entity_id: light.kitchen_hue_filament_bulb
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_kitchen_hue_filament_bulb
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_hue_iris_tv_left
+    entity_id: light.hue_iris_tv_left
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_hue_iris_tv_left
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_hue_iris_tv_right
+    entity_id: light.hue_iris_tv_right
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_hue_iris_tv_right
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_hue_smart_plug_eingang
+    entity_id: light.hue_smart_plug_eingang
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_hue_smart_plug_eingang
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_nanoleaf_shapes_bedroom
+    entity_id: light.nanoleaf_shapes_bedroom
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_nanoleaf_shapes_bedroom
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_living_room_shapes_spare
+    entity_id: light.living_room_shapes_spare
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_living_room_shapes_spare
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_neon_floor_lamp
+    entity_id: light.neon_floor_lamp
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_neon_floor_lamp
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_stairs_nanoleaf_multicolor_floor_lamp_aufgang_2
+    entity_id: light.stairs_nanoleaf_multicolor_floor_lamp_aufgang_2
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_stairs_nanoleaf_multicolor_floor_lamp_aufgang_2
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_light_bedroom_nanoleaf_multicolor_floor_lamp_bedroom
+    entity_id: light.bedroom_nanoleaf_multicolor_floor_lamp_bedroom
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_light_bedroom_nanoleaf_multicolor_floor_lamp_bedroom
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_switch_sonoff_1001052430
+    entity_id: switch.sonoff_1001052430
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_switch_sonoff_1001052430
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_switch_theben_kuche_spots
+    entity_id: switch.theben_kuche_spots
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_switch_theben_kuche_spots
+            state:
+              checked: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: bs_switch_shelly_plus1_badezimmer_spots_switch_0
+    entity_id: switch.shelly_plus1_badezimmer_spots_switch_0
+    internal: true
+    on_state:
+      then:
+        - lvgl.widget.update:
+            id: sw_switch_shelly_plus1_badezimmer_spots_switch_0
+            state:
+              checked: !lambda 'return x;'
+ 
+  
+  # Repo Dummy sensors not valid without adjusting
   # Office Blind Position
   - platform: homeassistant
     entity_id: cover.office_blind
