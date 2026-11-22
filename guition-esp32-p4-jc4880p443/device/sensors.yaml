@@ -808,64 +808,64 @@ binary_sensor:
             hidden: !lambda return !x;
 
   # Office Blind 100% (Open)
-  - platform: template
-    id: office_blind_100
-    lambda: |-
-      if (id(office_blind_position).has_state()) {
-        return abs(id(office_blind_position).state - 100) <= 3;
-      }
-      return false;
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_blind_open_button
-          state:
-            checked: !lambda return x;
+  # - platform: template
+  #   id: office_blind_100
+  #   lambda: |-
+  #     if (id(office_blind_position).has_state()) {
+  #       return abs(id(office_blind_position).state - 100) <= 3;
+  #     }
+  #     return false;
+  #   on_state:
+  #     then:
+  #       lvgl.widget.update:
+  #         id: office_blind_open_button
+  #         state:
+  #           checked: !lambda return x;
 
   # Office Blind 66% (Semi Open)
-  - platform: template
-    id: office_blind_66
-    lambda: |-
-      if (id(office_blind_position).has_state()) {
-        return abs(id(office_blind_position).state - 66) <= 3;
-      }
-      return false;
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_blind_66_button
-          state:
-            checked: !lambda return x;
+  # - platform: template
+  #   id: office_blind_66
+  #   lambda: |-
+  #     if (id(office_blind_position).has_state()) {
+  #       return abs(id(office_blind_position).state - 66) <= 3;
+  #     }
+  #     return false;
+  #   on_state:
+  #     then:
+  #       lvgl.widget.update:
+  #         id: office_blind_66_button
+  #         state:
+  #           checked: !lambda return x;
 
   # Office Blind 33% (Semi Closed)
-  - platform: template
-    id: office_blind_33
-    lambda: |-
-      if (id(office_blind_position).has_state()) {
-        return abs(id(office_blind_position).state - 33) <= 3;
-      }
-      return false;
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_blind_33_button
-          state:
-            checked: !lambda return x;
+  # - platform: template
+  #   id: office_blind_33
+  #   lambda: |-
+  #     if (id(office_blind_position).has_state()) {
+  #       return abs(id(office_blind_position).state - 33) <= 3;
+  #     }
+  #     return false;
+  #   on_state:
+  #     then:
+  #       lvgl.widget.update:
+  #         id: office_blind_33_button
+  #         state:
+  #           checked: !lambda return x;
 
   # Office Blind 0% (Close)
-  - platform: template
-    id: office_blind_0
-    lambda: |-
-      if (id(office_blind_position).has_state()) {
-        return abs(id(office_blind_position).state - 0) <= 3;
-      }
-      return false;
-    on_state:
-      then:
-        lvgl.widget.update:
-          id: office_blind_close_button
-          state:
-            checked: !lambda return x;
+  # - platform: template
+  #   id: office_blind_0
+  #   lambda: |-
+  #     if (id(office_blind_position).has_state()) {
+  #       return abs(id(office_blind_position).state - 0) <= 3;
+  #     }
+  #     return false;
+  #   on_state:
+  #     then:
+  #       lvgl.widget.update:
+  #         id: office_blind_close_button
+  #         state:
+  #           checked: !lambda return x;
 
   # Office Storage Lights
   - platform: homeassistant
