@@ -63,7 +63,7 @@ lvgl:
           tabs:
           - name: "\U000F02DC"
             pad_all: 8
-            pad_gap: 6
+            #pad_gap: 6
             layout:
               type: flex
               flex_flow: column
@@ -81,7 +81,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 8
+                  #pad_gap: 8
                   layout:
                     type: flex
                     flex_flow: row
@@ -102,7 +102,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 8
+                  #pad_gap: 8
                   layout:
                     type: flex
                     flex_flow: row
@@ -123,7 +123,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 8
+                  #pad_gap: 8
                   layout:
                     type: flex
                     flex_flow: row
@@ -144,7 +144,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 8
+                  #pad_gap: 8
                   layout:
                     type: flex
                     flex_flow: row
@@ -165,7 +165,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 8
+                  #pad_gap: 8
                   layout:
                     type: flex
                     flex_flow: row
@@ -186,7 +186,7 @@ lvgl:
                   bg_opa: transp
                   border_width: 0
                   pad_all: 0
-                  pad_gap: 6
+                  #pad_gap: 6
                   layout:
                     type: flex
                     flex_flow: row_wrap
