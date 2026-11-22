@@ -21,215 +21,8 @@ sensor:
             format: "%d° / %d°"
             args: [ '(int)round(x)', '(int)round(id(office_temperature).state)' ]
   
-  # Claude generated sensors from my own homeassistant instance
-  
-text_sensor:
-  - platform: homeassistant
-    id: ts_sensor_persons
-    entity_id: sensor.persons
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_persons
-            text: !lambda 'return std::string("Persons home: ") + x;'
- 
-  - platform: homeassistant
-    id: ts_person_simon
-    entity_id: person.simon
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_simon
-            text: !lambda 'return std::string("Simon: ") + x;'
- 
-  - platform: homeassistant
-    id: ts_weather_home
-    entity_id: weather.home
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_weather_state
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_ics_1
-    entity_id: sensor.ics_1
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_ics1
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_ics_4
-    entity_id: sensor.ics_4
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_ics4
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_ics_2
-    entity_id: sensor.ics_2
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_ics2
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_rrraintext
-    entity_id: sensor.rrraintext
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_rain_text
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_rrrainin30min
-    entity_id: sensor.rrrainin30min
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_rain30
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_rrrainin60min
-    entity_id: sensor.rrrainin60min
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_rain60
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_sensor_rrrainin120min
-    entity_id: sensor.rrrainin120min
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_rain120
-            text: !lambda 'return std::string("") + x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_kitchen_move_l_2_title
-    entity_id: media_player.kitchen_move_l_2
-    attribute: media_title
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_kitchen_move_l_2_title
-            text: !lambda 'return x.empty() ? std::string("-") : x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_kitchen_move_l_2_state
-    entity_id: media_player.kitchen_move_l_2
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_kitchen_move_l_2_state
-            text: !lambda 'return x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_bedroom_l_title
-    entity_id: media_player.bedroom_l
-    attribute: media_title
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_bedroom_l_title
-            text: !lambda 'return x.empty() ? std::string("-") : x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_bedroom_l_state
-    entity_id: media_player.bedroom_l
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_bedroom_l_state
-            text: !lambda 'return x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_office_title
-    entity_id: media_player.office
-    attribute: media_title
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_office_title
-            text: !lambda 'return x.empty() ? std::string("-") : x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_office_state
-    entity_id: media_player.office
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_office_state
-            text: !lambda 'return x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_the_orphan_title
-    entity_id: media_player.the_orphan
-    attribute: media_title
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_the_orphan_title
-            text: !lambda 'return x.empty() ? std::string("-") : x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_the_orphan_state
-    entity_id: media_player.the_orphan
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_the_orphan_state
-            text: !lambda 'return x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_tv_room_title
-    entity_id: media_player.tv_room
-    attribute: media_title
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_tv_room_title
-            text: !lambda 'return x.empty() ? std::string("-") : x;'
- 
-  - platform: homeassistant
-    id: ts_media_player_tv_room_state
-    entity_id: media_player.tv_room
-    internal: true
-    on_value:
-      then:
-        - lvgl.label.update:
-            id: lbl_media_player_tv_room_state
-            text: !lambda 'return x;'
- 
-sensor:
+# Claude generated sensors from my own homeassistant instance
+#sensor:
   - platform: homeassistant
     id: sn_weather_temp
     entity_id: weather.home
@@ -470,6 +263,213 @@ sensor:
         - lvgl.slider.update:
             id: sl_media_player_tv_room_vol
             value: !lambda 'return isnan(x) ? 0 : x * 100;'
+ 
+
+text_sensor:
+  - platform: homeassistant
+    id: ts_sensor_persons
+    entity_id: sensor.persons
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_persons
+            text: !lambda 'return std::string("Persons home: ") + x;'
+ 
+  - platform: homeassistant
+    id: ts_person_simon
+    entity_id: person.simon
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_simon
+            text: !lambda 'return std::string("Simon: ") + x;'
+ 
+  - platform: homeassistant
+    id: ts_weather_home
+    entity_id: weather.home
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_weather_state
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_1
+    entity_id: sensor.ics_1
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics1
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_4
+    entity_id: sensor.ics_4
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics4
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_ics_2
+    entity_id: sensor.ics_2
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_ics2
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrraintext
+    entity_id: sensor.rrraintext
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain_text
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin30min
+    entity_id: sensor.rrrainin30min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain30
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin60min
+    entity_id: sensor.rrrainin60min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain60
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_sensor_rrrainin120min
+    entity_id: sensor.rrrainin120min
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_rain120
+            text: !lambda 'return std::string("") + x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_kitchen_move_l_2_title
+    entity_id: media_player.kitchen_move_l_2
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_kitchen_move_l_2_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_kitchen_move_l_2_state
+    entity_id: media_player.kitchen_move_l_2
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_kitchen_move_l_2_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_bedroom_l_title
+    entity_id: media_player.bedroom_l
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_bedroom_l_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_bedroom_l_state
+    entity_id: media_player.bedroom_l
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_bedroom_l_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_office_title
+    entity_id: media_player.office
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_office_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_office_state
+    entity_id: media_player.office
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_office_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_the_orphan_title
+    entity_id: media_player.the_orphan
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_the_orphan_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_the_orphan_state
+    entity_id: media_player.the_orphan
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_the_orphan_state
+            text: !lambda 'return x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_tv_room_title
+    entity_id: media_player.tv_room
+    attribute: media_title
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_tv_room_title
+            text: !lambda 'return x.empty() ? std::string("-") : x;'
+ 
+  - platform: homeassistant
+    id: ts_media_player_tv_room_state
+    entity_id: media_player.tv_room
+    internal: true
+    on_value:
+      then:
+        - lvgl.label.update:
+            id: lbl_media_player_tv_room_state
+            text: !lambda 'return x;'
  
 binary_sensor:
   - platform: homeassistant
