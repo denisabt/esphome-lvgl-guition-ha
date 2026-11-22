@@ -488,7 +488,7 @@ binary_sensor:
       then:
         - lvgl.label.update:
             id: lbl_motion
-            text: !lambda "return x ? 'TV room motion: yes' : 'TV room motion: no';"
+            text: !lambda "return x ? 'TV room motion': 'yes' : 'TV room motion': 'no';"
 
   - platform: homeassistant
     id: bs_light_wled_gledoptolwed32
