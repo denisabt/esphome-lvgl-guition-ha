@@ -65,6 +65,19 @@ light:
     restore_mode: ALWAYS_ON
     default_transition_length: 250ms
 
+number:
+  - platform: template
+    name: LVGL Screen timeout
+    optimistic: true
+    id: display_timeout
+    unit_of_measurement: "s"
+    initial_value: 45
+    restore_value: true
+    min_value: 10
+    max_value: 180
+    step: 5
+    mode: box
+
 # I2C
 i2c:
   sda: GPIO7
@@ -77,6 +90,14 @@ touchscreen:
   - platform: gt911
     id: my_touchscreen
     display: my_display
+    on_release:
+  - if:
+      condition: lvgl.is_paused
+      then:
+        - logger.log: "LVGL resuming"
+        - lvgl.resume:
+        - lvgl.widget.redraw:
+        - light.turn_on: display_backlight
 
 # Display
 display:
