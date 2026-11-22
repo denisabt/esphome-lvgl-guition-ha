@@ -701,40 +701,6 @@ binary_sensor:
             state:
               checked: !lambda 'return x;'
  
-  
-  # Repo Dummy sensors not valid without adjusting
-  # Office Blind Position
-  - platform: homeassistant
-    entity_id: cover.office_blind
-    id: office_blind_position
-    attribute: current_position
-
-  # Centauri Carbon Print Progress
-  - platform: homeassistant
-    entity_id: sensor.centauri_carbon_percent_complete_helper
-    id: centauri_carbon_percent
-    on_value:
-      - lvgl.label.update:
-          id: print_progress_label
-          text:
-            format: "%.0f"
-            args: [ 'x' ]
-
-  # Filament Heater Humidity
-  - platform: homeassistant
-    entity_id: sensor.office_filament_heater_sensor_humidity
-    id: filament_heater_humidity
-    on_value:
-      - lvgl.label.update:
-          id: dryer_humidity_label
-          text:
-            format: "%.0f"
-            args: [ 'x' ]
-
-
-
-binary_sensor:
-
   # Office Evening Scene
   - platform: homeassistant
     id: office_scene_evening
@@ -926,3 +892,36 @@ binary_sensor:
           id: network_rack_button
           state:
             checked: !lambda return x;
+  
+  # Repo Dummy sensors not valid without adjusting
+  # Office Blind Position
+  - platform: homeassistant
+    entity_id: cover.office_blind
+    id: office_blind_position
+    attribute: current_position
+
+  # Centauri Carbon Print Progress
+  - platform: homeassistant
+    entity_id: sensor.centauri_carbon_percent_complete_helper
+    id: centauri_carbon_percent
+    on_value:
+      - lvgl.label.update:
+          id: print_progress_label
+          text:
+            format: "%.0f"
+            args: [ 'x' ]
+
+  # Filament Heater Humidity
+  - platform: homeassistant
+    entity_id: sensor.office_filament_heater_sensor_humidity
+    id: filament_heater_humidity
+    on_value:
+      - lvgl.label.update:
+          id: dryer_humidity_label
+          text:
+            format: "%.0f"
+            args: [ 'x' ]
+
+
+
+#binary_sensor:
