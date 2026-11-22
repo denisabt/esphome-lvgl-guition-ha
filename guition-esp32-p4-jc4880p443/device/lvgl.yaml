@@ -3,6 +3,12 @@ lvgl:
   byte_order: little_endian
   displays: my_display
   touchscreens: my_touchscreen
+  on_idle:
+    timeout: !lambda "return (id(display_timeout).state * 1000);"
+    then:
+      - logger.log: "LVGL is idle"
+      - light.turn_off: display_backlight
+      - lvgl.pause:
 
   top_layer:
     widgets:
