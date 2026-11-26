@@ -121,3 +121,8 @@ font:
     bpp: 4
     glyphs: ["\U000F02DC", "\U000F0335", "\U000F06B5", "\U000F075A", "\U000F040A", "\U000F03E4", "\U000F040E", "\U000F04AD", "\U000F04AE", "\U000F057E", "\U000F00ED", "\U000F0004", "\U000F0595", "\U000F0597", "\U000F059A", "\U000F05A8", "\U000F04B2", "\U000F0502", "\U000F02E3", "\U000F0425", "\U000F0D91", "\U000F050F", "\U000F04C3", "\U000F0439"]
  
+image:
+- platform: file
+  file: "../assets/back6.png"
+  type: BINARY
+  id: back_6
