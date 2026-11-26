@@ -123,6 +123,6 @@ font:
  
 image:
 - platform: file
-  file: "../assets/back6.png"
+  file: "./../assets/back6.png"
   type: BINARY
   id: back_6
