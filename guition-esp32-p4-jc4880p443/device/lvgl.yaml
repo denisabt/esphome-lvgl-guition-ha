@@ -1910,30 +1910,30 @@ lvgl:
                         - homeassistant.action:
                             action: cover.toggle
                             data:
-                              entity_id: ${shutter_0}
+                              entity_id: "cover.storen_bedroom"
                       on_long_press:
                         - homeassistant.action:
                             action: cover.stop_cover
                             data:
-                              entity_id: ${shutter_0}
+                              entity_id: "cover.storen_bedroom"
                       widgets:
                         - label:
                             id: shutter_widget_icon_0
                             text_font: shutter_font_icon
                             align: center
-                            text: ${shutter_close_icon}
+                            text: "BedroomClose"
                         - label:
                             id: shutter_widget_name_0
                             text_font: label_font
                             align: top_mid
-                            text: "недоступно"
+                            text: "Unavailable"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_0
                             text_font: label_font
                             align: bottom_mid
-                            text: "недоступно"
+                            text: "Unavailable"
                             long_mode: dot
                             y: 5
                   - button:
@@ -1965,14 +1965,14 @@ lvgl:
                             id: shutter_widget_name_1
                             text_font: label_font
                             align: top_mid
-                            text: "недоступно"
+                            text: "Unavailable"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_1
                             text_font: label_font
                             align: bottom_mid
-                            text: "недоступно"
+                            text: "Unavailable"
                             long_mode: dot
                             y: 5
                   - button:
@@ -2256,125 +2256,125 @@ lvgl:
 
 
       # 3d Printer
-      - button: 
-          height: $button_height
-          width: $button_width
-          checkable: true
-          id: printer_power_button
-          styles: control
-          widgets:
-            # Icon (shown when OFF)
-            - label:
-                text_font: $icon_font
-                align: top_left
-                id: printer_power_icon
-                text: $printer
-            # Progress (shown when ON)
-            - obj:
-                align: top_left
-                id: print_progress_container
-                height: SIZE_CONTENT
-                width: SIZE_CONTENT
-                clickable: false
-                layout:
-                  type: flex
-                  flex_flow: row
-                  flex_align_cross: end
-                bg_opa: TRANSP
-                border_width: 0
-                pad_all: 0
-                hidden: true
-                widgets:
-                  - label:
-                      text_font: statistics_font
-                      text_color: $button_text_color
-                      id: print_progress_label
-                      text: "--"
-                  - label:
-                      text_font: label_font
-                      text_color: $button_text_color
-                      text: "%"
-                      pad_bottom: 6
-            - label:
-                align: bottom_left
-                text: "Printer"
-          on_click:
-            - homeassistant.service:
-                service: switch.toggle
-                data:
-                  entity_id: switch.office_3d_printer_power
+      # - button: 
+      #     height: $button_height
+      #     width: $button_width
+      #     checkable: true
+      #     id: printer_power_button
+      #     styles: control
+      #     widgets:
+      #       # Icon (shown when OFF)
+      #       - label:
+      #           text_font: $icon_font
+      #           align: top_left
+      #           id: printer_power_icon
+      #           text: $printer
+      #       # Progress (shown when ON)
+      #       - obj:
+      #           align: top_left
+      #           id: print_progress_container
+      #           height: SIZE_CONTENT
+      #           width: SIZE_CONTENT
+      #           clickable: false
+      #           layout:
+      #             type: flex
+      #             flex_flow: row
+      #             flex_align_cross: end
+      #           bg_opa: TRANSP
+      #           border_width: 0
+      #           pad_all: 0
+      #           hidden: true
+      #           widgets:
+      #             - label:
+      #                 text_font: statistics_font
+      #                 text_color: $button_text_color
+      #                 id: print_progress_label
+      #                 text: "--"
+      #             - label:
+      #                 text_font: label_font
+      #                 text_color: $button_text_color
+      #                 text: "%"
+      #                 pad_bottom: 6
+      #       - label:
+      #           align: bottom_left
+      #           text: "Printer"
+      #     on_click:
+      #       - homeassistant.service:
+      #           service: switch.toggle
+      #           data:
+      #             entity_id: switch.office_3d_printer_power
 
       # Filament Heater
-      - button: 
-          height: $button_height
-          width: $button_width
-          checkable: true
-          id: filament_heater_button
-          styles: control
-          widgets:
-            # Icon (shown when OFF)
-            - label:
-                text_font: $icon_font
-                align: top_left
-                id: filament_heater_icon
-                text: $filament
-            # Humidity (shown when ON)
-            - obj:
-                align: top_left
-                id: dryer_humidity_container
-                height: SIZE_CONTENT
-                width: SIZE_CONTENT
-                clickable: false
-                layout:
-                  type: flex
-                  flex_flow: row
-                  flex_align_cross: end
-                bg_opa: TRANSP
-                border_width: 0
-                pad_all: 0
-                hidden: true
-                widgets:
-                  - label:
-                      text_font: statistics_font
-                      text_color: $button_text_color
-                      id: dryer_humidity_label
-                      text: "--"
-                  - label:
-                      text_font: label_font
-                      text_color: $button_text_color
-                      text: "%"
-                      pad_bottom: 6
-                      pad_left: -4
-            - label:
-                align: bottom_left
-                text: "Dryer"
-          on_click:
-            - homeassistant.service:
-                service: switch.toggle
-                data:
-                  entity_id: switch.office_filament_heater_893b
+      # - button: 
+      #     height: $button_height
+      #     width: $button_width
+      #     checkable: true
+      #     id: filament_heater_button
+      #     styles: control
+      #     widgets:
+      #       # Icon (shown when OFF)
+      #       - label:
+      #           text_font: $icon_font
+      #           align: top_left
+      #           id: filament_heater_icon
+      #           text: $filament
+      #       # Humidity (shown when ON)
+      #       - obj:
+      #           align: top_left
+      #           id: dryer_humidity_container
+      #           height: SIZE_CONTENT
+      #           width: SIZE_CONTENT
+      #           clickable: false
+      #           layout:
+      #             type: flex
+      #             flex_flow: row
+      #             flex_align_cross: end
+      #           bg_opa: TRANSP
+      #           border_width: 0
+      #           pad_all: 0
+      #           hidden: true
+      #           widgets:
+      #             - label:
+      #                 text_font: statistics_font
+      #                 text_color: $button_text_color
+      #                 id: dryer_humidity_label
+      #                 text: "--"
+      #             - label:
+      #                 text_font: label_font
+      #                 text_color: $button_text_color
+      #                 text: "%"
+      #                 pad_bottom: 6
+      #                 pad_left: -4
+      #       - label:
+      #           align: bottom_left
+      #           text: "Dryer"
+      #     on_click:
+      #       - homeassistant.service:
+      #           service: switch.toggle
+      #           data:
+      #             entity_id: switch.office_filament_heater_893b
 
       # Office Aircon
-      - button: 
-          height: $button_height
-          width: $button_width
-          checkable: true
-          id: office_aircon_button
-          styles: control
-          widgets:
-            - label:
-                text_font: $icon_font
-                align: top_left
-                text: $aircon
-            - label:
-                align: bottom_left
-                text: "Aircon"
-          on_click:
-            - homeassistant.service:
-                service: script.office_air_conditioner
+      # - button: 
+      #     height: $button_height
+      #     width: $button_width
+      #     checkable: true
+      #     id: office_aircon_button
+      #     styles: control
+      #     widgets:
+      #       - label:
+      #           text_font: $icon_font
+      #           align: top_left
+      #           text: $aircon
+      #       - label:
+      #           align: bottom_left
+      #           text: "Aircon"
+      #     on_click:
+      #       - homeassistant.service:
+      #           service: script.office_air_conditioner
 
       # Battery Charger
-      - button: 
+      # - button: 
           height: $button_height
           width: $button_width
           checkable: true
