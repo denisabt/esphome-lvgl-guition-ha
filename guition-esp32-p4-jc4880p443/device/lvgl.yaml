@@ -1872,6 +1872,30 @@ lvgl:
                                 data:
                                   entity_id: media_player.tv_room
                                   volume_level: !lambda 'return std::to_string(lv_slider_get_value(id(sl_media_player_tv_room_vol)) / 100.0);'
+          - name: "Shutters"
+            pad_all: 8
+            #pad_gap: 6
+            layout:
+              type: flex
+              flex_flow: column
+            widgets:
+            - image:
+                align: LEFT_MID
+                src: back_6
+            - obj:
+                bg_opa: TRANSP
+                border_opa: TRANSP
+                width: 480
+                height: 460
+                align: TOP_LEFT
+                x: 0
+                y: 0
+                layout:
+                  type: GRID
+                  pad_row: 10
+                  pad_column: 10
+                  grid_columns: [FR(1), FR(1), FR(1), FR(1), FR(1), FR(1)]
+                  grid_rows: [FR(1), FR(1), FR(1), FR(1), FR(1), FR(1)]
 
       # Office Features Scene - github sample, not applicable without adjustemnts
       - button: 
@@ -2194,26 +2218,3 @@ lvgl:
                 service: switch.toggle
                 data:
                   entity_id: switch.battery_charger
-
-      # Storage Lights
-      - button: 
-          height: $button_height
-          width: $button_width
-          checkable: true
-          id: storage_lights_button
-          styles: control
-          widgets:
-            - label:
-                text_font: $icon_font
-                align: top_left
-                id: storage_lights_icon
-                text: $package
-            - label:
-                align: bottom_left
-                id: storage_lights_label
-                text: "Storage"
-          on_click:
-            - homeassistant.service:
-                service: light.toggle
-                data:
-                  entity_id: light.office_storage
