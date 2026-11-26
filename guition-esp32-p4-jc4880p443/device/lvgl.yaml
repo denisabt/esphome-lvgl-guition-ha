@@ -2375,23 +2375,23 @@ lvgl:
 
       # Battery Charger
       # - button: 
-          height: $button_height
-          width: $button_width
-          checkable: true
-          id: battery_charger_button
-          styles: control
-          widgets:
-            - label:
-                text_font: $icon_font
-                align: top_left
-                id: battery_charger_icon
-                text: $battery
-            - label:
-                align: bottom_left
-                id: battery_charger_label
-                text: "Charger"
-          on_click:
-            - homeassistant.service:
-                service: switch.toggle
-                data:
-                  entity_id: switch.battery_charger
+          # height: $button_height
+          # width: $button_width
+          # checkable: true
+          # id: battery_charger_button
+          # styles: control
+          # widgets:
+          #   - label:
+          #       text_font: $icon_font
+          #       align: top_left
+          #       id: battery_charger_icon
+          #       text: $battery
+          #   - label:
+          #       align: bottom_left
+          #       id: battery_charger_label
+          #       text: "Charger"
+          # on_click:
+          #   - homeassistant.service:
+          #       service: switch.toggle
+          #       data:
+          #         entity_id: switch.battery_charger
