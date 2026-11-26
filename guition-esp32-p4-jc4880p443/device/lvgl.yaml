@@ -1896,6 +1896,12 @@ lvgl:
                   pad_column: 10
                   grid_columns: [FR(1), FR(1), FR(1), FR(1), FR(1), FR(1)]
                   grid_rows: [FR(1), FR(1), FR(1), FR(1), FR(1), FR(1)]
+                widgets:
+                - label:
+                    text_font: $icon_font
+                    align: top_left
+                    id: covers_placeholder                
+                    text: placeholder_covers
 
       # Office Features Scene - github sample, not applicable without adjustemnts
       - button: 
