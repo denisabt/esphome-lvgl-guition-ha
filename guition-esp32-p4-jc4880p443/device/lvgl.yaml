@@ -1288,7 +1288,7 @@ lvgl:
                                 action: switch.toggle
                                 data:
                                   entity_id: switch.shelly_plus1_badezimmer_spots_switch_0
-          - name: "\U000F075A"
+          - name: "\F00AC"
             pad_all: 8
             #pad_gap: 6
             layout:
