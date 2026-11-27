@@ -1872,7 +1872,7 @@ lvgl:
                                 data:
                                   entity_id: media_player.tv_room
                                   volume_level: !lambda 'return std::to_string(lv_slider_get_value(id(sl_media_player_tv_room_vol)) / 100.0);'
-          - name: "Shutters"
+          - name: "\U000F050F"
             pad_all: 8
             #pad_gap: 6
             layout:
@@ -1926,14 +1926,14 @@ lvgl:
                             id: shutter_widget_name_0
                             text_font: label_font
                             align: top_mid
-                            text: "Unavailable"
+                            text: "-"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_0
                             text_font: label_font
                             align: bottom_mid
-                            text: "Unavailable"
+                            text: "-"
                             long_mode: dot
                             y: 5
                   - button:
@@ -1986,7 +1986,7 @@ lvgl:
                       bg_opa: 35%
                       on_short_click:
                         - homeassistant.action:
-                            action: cover.close_cover
+                            action: cover.toggle_cover
                             data:
                               entity_id: "cover.tv_room"
                       on_long_press:
@@ -2021,7 +2021,7 @@ lvgl:
                             id: shutter_widget_state_2
                             text_font: label_font
                             align: bottom_mid
-                            text: "недоступно"
+                            text: "-"
                             long_mode: dot
                             y: 5
                   - button:
@@ -2037,40 +2037,40 @@ lvgl:
                         - homeassistant.action:
                             action: cover.toggle
                             data:
-                              entity_id: ${shutter_3}
+                              entity_id: "cover.storen_kitchen"
                       on_long_press:
                         - homeassistant.action:
                             action: cover.stop_cover
                             data:
-                              entity_id: ${shutter_3}
+                              entity_id: "cover.storen_kitchen"
                       on_swipe_up:
                         - homeassistant.action:
                             action: cover.open_cover
                             data:
-                              entity_id: ${shutter_3}
+                              entity_id: "cover.storen_kitchen"
                       on_swipe_down:
                         - homeassistant.action:
                             action: cover.close_cover
                             data:
-                              entity_id: ${shutter_3}
+                              entity_id: "cover.storen_kitchen"
                       widgets:
                         - label:
                             id: shutter_widget_icon_3
                             text_font: shutter_font_icon
                             align: center
-                            text: ${shutter_close_icon}
+                            text: "⏬"
                         - label:
                             id: shutter_widget_name_3
                             text_font: label_font
                             align: top_mid
-                            text: "недоступно"
+                            text: "ktch"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_3
                             text_font: label_font
                             align: bottom_mid
-                            text: "недоступно"
+                            text: "ktch"
                             long_mode: dot
                             y: 5
 
