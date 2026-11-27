@@ -1949,30 +1949,30 @@ lvgl:
                         - homeassistant.action:
                             action: cover.toggle
                             data:
-                              entity_id: ${shutter_1}
+                              entity_id: "cover.living_room"
                       on_long_press:
                         - homeassistant.action:
                             action: cover.stop_cover
                             data:
-                              entity_id: ${shutter_1}
+                              entity_id: "cover.living_room"
                       widgets:
                         - label:
                             id: shutter_widget_icon_1
                             text_font: shutter_font_icon
                             align: center
-                            text: ${shutter_close_icon}
+                            text: "⏬"
                         - label:
                             id: shutter_widget_name_1
                             text_font: label_font
                             align: top_mid
-                            text: "Unavailable"
+                            text: "Living Room"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_1
                             text_font: label_font
                             align: bottom_mid
-                            text: "Unavailable"
+                            text: "-"
                             long_mode: dot
                             y: 5
                   - button:
@@ -1986,35 +1986,35 @@ lvgl:
                       bg_opa: 35%
                       on_short_click:
                         - homeassistant.action:
-                            action: cover.toggle
+                            action: cover.close_cover
                             data:
-                              entity_id: ${shutter_2}
+                              entity_id: "cover.tv_room"
                       on_long_press:
                         - homeassistant.action:
                             action: cover.stop_cover
                             data:
-                              entity_id: ${shutter_2}
+                              entity_id: "cover.tv_room"
                       on_swipe_up:
                         - homeassistant.action:
                             action: cover.open_cover
                             data:
-                              entity_id: ${shutter_2}
+                              entity_id: "cover.tv_room"
                       on_swipe_down:
                         - homeassistant.action:
                             action: cover.close_cover
                             data:
-                              entity_id: ${shutter_2}
+                              entity_id: "cover.tv_room"
                       widgets:
                         - label:
                             id: shutter_widget_icon_2
                             text_font: shutter_font_icon
                             align: center
-                            text: ${shutter_close_icon}
+                            text: "⏬"
                         - label:
                             id: shutter_widget_name_2
                             text_font: label_font
                             align: top_mid
-                            text: "недоступно"
+                            text: "TV Room"
                             long_mode: dot
                             y: -5
                         - label:
