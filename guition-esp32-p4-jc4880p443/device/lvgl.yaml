@@ -2058,7 +2058,7 @@ lvgl:
                             id: shutter_widget_icon_3
                             text_font: shutter_font_icon
                             align: center
-                            text: "⏬"
+                            text: "\U000F0730"
                         - label:
                             id: shutter_widget_name_3
                             text_font: label_font
