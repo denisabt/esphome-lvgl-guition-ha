@@ -1958,9 +1958,9 @@ lvgl:
                       widgets:
                         - label:
                             id: shutter_widget_icon_1
-                            text_font: shutter_font_icon
+                            text_font: $icon_font
                             align: center
-                            text: "⏬"
+                            text: $blinds_open
                         - label:
                             id: shutter_widget_name_1
                             text_font: label_font
@@ -1970,9 +1970,9 @@ lvgl:
                             y: -5
                         - label:
                             id: shutter_widget_state_1
-                            text_font: label_font
+                            text_font: icon_font
                             align: bottom_mid
-                            text: "-"
+                            text: $blinds_closed
                             long_mode: dot
                             y: 5
                   - button:
