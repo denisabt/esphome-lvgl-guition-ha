@@ -2070,7 +2070,7 @@ lvgl:
                             id: shutter_widget_state_3
                             text_font: $icon_font
                             align: bottom_mid
-                            text: $blinds_closed
+                            text: $blinds_closed 
                             long_mode: dot
                             y: 5
 
