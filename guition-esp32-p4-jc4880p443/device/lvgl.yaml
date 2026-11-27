@@ -1919,9 +1919,9 @@ lvgl:
                       widgets:
                         - label:
                             id: shutter_widget_icon_0
-                            text_font: shutter_font_icon
+                            text_font: $icon_font
                             align: center
-                            text: "BedroomClose"
+                            text: $blinds_open
                         - label:
                             id: shutter_widget_name_0
                             text_font: label_font
@@ -1931,9 +1931,9 @@ lvgl:
                             y: -5
                         - label:
                             id: shutter_widget_state_0
-                            text_font: label_font
+                            text_font: $icon_font
                             align: bottom_mid
-                            text: "-"
+                            text: $blinds_closed
                             long_mode: dot
                             y: 5
                   - button:
@@ -1958,9 +1958,9 @@ lvgl:
                       widgets:
                         - label:
                             id: shutter_widget_icon_1
-                            text_font: shutter_font_icon
+                            text_font: $icon_font
                             align: center
-                            text: "⏬"
+                            text: $blinds_open
                         - label:
                             id: shutter_widget_name_1
                             text_font: label_font
@@ -1970,9 +1970,9 @@ lvgl:
                             y: -5
                         - label:
                             id: shutter_widget_state_1
-                            text_font: label_font
+                            text_font: icon_font
                             align: bottom_mid
-                            text: "-"
+                            text: $blinds_closed
                             long_mode: dot
                             y: 5
                   - button:
@@ -2007,9 +2007,9 @@ lvgl:
                       widgets:
                         - label:
                             id: shutter_widget_icon_2
-                            text_font: shutter_font_icon
+                            text_font: $icon_font
                             align: center
-                            text: "⏬"
+                            text: $blinds_open
                         - label:
                             id: shutter_widget_name_2
                             text_font: label_font
@@ -2019,9 +2019,9 @@ lvgl:
                             y: -5
                         - label:
                             id: shutter_widget_state_2
-                            text_font: label_font
+                            text_font: $icon_font
                             align: bottom_mid
-                            text: "-"
+                            text: $blinds_closed
                             long_mode: dot
                             y: 5
                   - button:
@@ -2056,9 +2056,9 @@ lvgl:
                       widgets:
                         - label:
                             id: shutter_widget_icon_3
-                            text_font: shutter_font_icon
+                            text_font: $icon_font
                             align: center
-                            text: "\U000F0730"
+                            text: $blinds_open
                         - label:
                             id: shutter_widget_name_3
                             text_font: label_font
@@ -2068,9 +2068,9 @@ lvgl:
                             y: -5
                         - label:
                             id: shutter_widget_state_3
-                            text_font: label_font
+                            text_font: $icon_font
                             align: bottom_mid
-                            text: "\U000F0730"
+                            text: $blinds_closed
                             long_mode: dot
                             y: 5
 
