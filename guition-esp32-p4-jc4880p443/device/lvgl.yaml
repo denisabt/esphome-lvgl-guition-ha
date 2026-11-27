@@ -2063,14 +2063,14 @@ lvgl:
                             id: shutter_widget_name_3
                             text_font: label_font
                             align: top_mid
-                            text: "ktch"
+                            text: "\U000F0730"
                             long_mode: dot
                             y: -5
                         - label:
                             id: shutter_widget_state_3
                             text_font: label_font
                             align: bottom_mid
-                            text: "ktch"
+                            text: "\U000F0730"
                             long_mode: dot
                             y: 5
 

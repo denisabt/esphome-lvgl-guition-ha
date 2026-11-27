@@ -22,6 +22,7 @@ font:
       "\U000F089E",  # mdi-battery
       "\U000F07DE",  # mdi-filament
       "\U000F0317",  # mdi-lan
+      "\U000F0730"   # mdi-blind-down
       ]
 
 # Map icons to names
